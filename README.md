@@ -6,8 +6,7 @@ An initiative to simplify the way we interact with big data.
 =======
 
 **********
-* Search *
-**********
+Search 
 
 When he co-founded Google, Larry Page identified an ambitious goal for the nascent search giant: to not only provide the best search results of any search engine, but to immediately present the user with the information they were looking for.
 
@@ -19,8 +18,8 @@ The search function will utilize the APIs of Google, Facebook, and Wolfram Alpha
 
 
 ***********
-* Explore *
-***********
+Explore
+
 
 What good is a wealth of big data if the average person has no way to learn from it?
 
