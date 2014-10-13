@@ -14,7 +14,7 @@ Google's Knowledge Boxes accomplish this goal for many queries. They are truly f
 
 Other inspiration for Sandbox Search is derived from Wolfram Alpha and Facebook.
 
-The search function will utilize the APIs of Google, Facebook, and Wolfram Alpha to present the best possible search result. The algorithm will then assess the user's satisfaction with the result and update a heuristic that determines which type of result is displayed and which data source is used.
+The search function will utilize the APIs of Google, Facebook, and Wolfram Alpha to present the best possible search result, or primary result, for any given query. The Sandbox algorithm, which determines the type of result displayed and the data source used, is a learning one. Upon assessing the user's satisfaction with the primary result, it will improve itself based on what result the user was actually interested in.
 
 
 ***********
