@@ -18,8 +18,8 @@ Homepage.register(function(app, auth, database) {
 
   //We are adding a link to the main menu for all authenticated users
   Homepage.menus.add({
-    title: 'homepage example page',
-    link: 'homepage example page',
+    title: 'Sandbox',
+    link: 'Sandbox',
     roles: ['authenticated'],
     menu: 'main'
   });

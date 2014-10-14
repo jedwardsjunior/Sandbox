@@ -2,8 +2,8 @@
 
 angular.module('mean.homepage').config(['$stateProvider',
   function($stateProvider) {
-    $stateProvider.state('homepage example page', {
-      url: '/homepage/example',
+    $stateProvider.state('Sandbox', {
+      url: '/Sandbox/',
       templateUrl: 'homepage/views/index.html'
     });
   }
