@@ -36,25 +36,6 @@ function getFBResults(query, callback) {
 
 }
 
-/**
-function getProfilePicture(page, callback) {
-	var url = "https://graph.facebook.com/"+page.id+"/picture?redirect=0";
-	var body = "";
-	https.get(url, function(res) {
-		res.on("data", function(data) {
-			body += data;
-		});
-		res.on('end', function () {
-			page.picture = JSON.parse(body).data;
-			callback(page);
-		});
-	}).on('error', function(e) {
-		console.log("Got error: " + e.message);
-		callback(page);
-	});
-}
-*/
-
 function getGoogleResults(query, callback) {
 	var options = {
 		keyword : query,
@@ -133,21 +114,15 @@ exports.addQuery = function (query) {
 				var fb_top_five = [];
 				var data = JSON.parse(result).data;
 				for (i=0; i<5; i++) {
-					/**data[i].picture = getProfilePicture(data[i], function(result) {
-					console.log(result);
-					fb_top_five.push(result);*/
 					fb_top_five.push(data[i]);
 
 					if(fb_top_five.length == 5) {
 						addFBDataToDB(fb_top_five);
 						fb_ready = true;
 					}
-
-					//});
 				}
 			}
 		});
-
 
 		// --- WOLFRAM ALPHA INFO ---
 		getWolframAlphaResults(query, function(result) {
@@ -160,10 +135,13 @@ exports.addQuery = function (query) {
 		});
 
 
+		// Should be replaced with promises when I have time to learn them
 		function wait() {
 			if(fb_ready && google_ready && wolfram_ready) {
 				//console.log("Done!");
 				addDataToDB(query);
+				return(dictionary_of_data);
+				
 			} else {
 				//console.log("I'm waiting...");
 				setTimeout(wait, 300);

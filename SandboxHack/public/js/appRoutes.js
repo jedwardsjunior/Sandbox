@@ -11,7 +11,12 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 		.when('/explore', {
 			templateUrl: 'views/explore.html',
 			controller: 'ExploreController'
-		});
+		})
+
+		.when('/search', {
+			templateUrl: 'views/result.html',
+			controller: 'SandboxController'
+		})
 
 	$locationProvider.html5Mode(true);
 
