@@ -12,19 +12,9 @@
 
 	<!-- JS -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script src="libs/angular/angular.min.js"></script>
-	<script src="libs/angular-route/angular-route.min.js"></script>
-
-	<!-- ANGULAR CUSTOM -->
-	<script src="js/controllers/MainCtrl.js"></script>
-	<script src="js/controllers/SandboxCtrl.js"></script>
-	<script src="js/controllers/ExploreCtrl.js"></script>
-	<script src="js/controllers/ResultCtrl.js"></script>
-	<script src="js/appRoutes.js"></script>
-	<script src="js/app.js"></script>
 
 </head>
-<body ng-app="sampleApp" ng-controller="SandboxController">
+<body>
 <!-- Facebook -->
 <script>
   window.fbAsyncInit = function() {
@@ -56,8 +46,16 @@
 		</ul>
 	</nav>
 
-	<!-- ANGULAR DYNAMIC CONTENT -->
-	<div ng-view></div>
+	<!-- JADE DYNAMIC CONTENT -->
+	<div class="jumbotron text-center">
+		<h1>Welcome to Sandbox</h1>
+		<br>
+		<form action="/search" method="get">
+			<input type="text" name="q" alt="Search" value="" maxlength="256" size="120" />
+			<input type="submit" name="submit" value="Search" />
+		</form>
+	</div>
+
 
 </div>
 </body>

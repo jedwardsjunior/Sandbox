@@ -22,8 +22,8 @@ module.exports = function(app) {
 		var result = f.addQuery(query);
 		//res.redirect('/search_result?'+query);
 		res.render('search-results',
-							{"name" : query,
-								"values" : result
+							{ name : query,
+								data : result
 							}
 		);
 	});
