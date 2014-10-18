@@ -1,0 +1,47 @@
+module.exports = function(app) {
+
+	var config = require('../config/db.js');
+	var db = require('orchestrate')(config.db);
+	var f = require('./functions.js');
+
+	// server routes ===========================================================
+	// handle things like api calls
+	// authentication routes
+
+	// frontend routes =========================================================
+	// route to handle all angular requests
+	app.get('/', function(req, res) {
+		res.sendfile('./public/index.html');
+	});
+
+
+	app.put('/query', function(req, res) {
+		var query = req.query;
+
+		var page = parseInt(request.query.p, 10) || 1;
+		var limit = 20;
+
+		var offset = (page - 1) * limit;
+
+		f.addQuery(query);
+
+		.then(function (data) {
+			var pages = Math.ceil(data.body.total_count / limit);
+
+			// kill the page object before we serialize the qs
+			delete request.query.p;
+
+			response.render('characters', {
+				pagination: {
+				page: page,
+				pageCount: pages,
+				qs: querystring.stringify(request.query)
+			},
+			data: data.body
+			});
+		})
+		.fail(function(error){
+			console.log(error);
+			response.render('error');
+		});
+};
