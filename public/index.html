@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<base href="/">
+
+	<title>Sandbox</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css"> <!-- custom styles -->
+
+	<!-- JS -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+</head>
+<body>
+	<!-- Facebook -->
+	<script>
+	  window.fbAsyncInit = function() {
+	    FB.init({
+	      appId      : '741682312571388',
+	      xfbml      : true,
+	      version    : 'v2.1'
+	    });
+	  };
+
+	  (function(d, s, id){
+	     var js, fjs = d.getElementsByTagName(s)[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement(s); js.id = id;
+	     js.src = "//connect.facebook.net/en_US/sdk.js";
+	     fjs.parentNode.insertBefore(js, fjs);
+	   }(document, 'script', 'facebook-jssdk'));
+	</script>
+
+	<!-- <ng-view></ng-view>
+	<script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script> -->
+	<div class="container">
+
+		<!-- HEADER -->
+		<nav class="navbar navbar-inverse">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/">Sandbox</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li><a href="/explore">Explore</a></li>
+			</ul>
+		</nav>
+
+		<!-- JADE DYNAMIC CONTENT -->
+		<div class="jumbotron text-center">
+			<h1>Welcome to Sandbox</h1>
+			<br>
+			<form action="/search" method="get">
+				<input type="text" name="q" alt="Search" value="" maxlength="256" size="120" />
+				<input type="submit" name="submit" value="Search" />
+			</form>
+		</div>
+	</div>
+</body>
+</html>
