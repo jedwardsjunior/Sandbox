@@ -12,7 +12,7 @@ module.exports = function(app) {
   // frontend routes =========================================================
   // route to handle all angular requests
   app.get('/', function(req, res) {
-    res.sendfile('./public/index.html');
+    res.sendfile('./public/views/home_view/index_view.html');
   });
 
   app.get('/search', function(request, response) {
@@ -23,7 +23,9 @@ module.exports = function(app) {
     var client = new zerorpc.Client();
     client.connect("tcp://127.0.0.1:4242");
     client.invoke("wikisearch", query, function(error, res, more) {
+        console.log(res);
         response.send(res);
+        //response.render("response", res);
     });
 
   });

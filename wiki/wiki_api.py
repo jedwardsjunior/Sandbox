@@ -1,29 +1,26 @@
-from wikipedia import Wikipedia
-from wiki2plain import Wiki2Plain
+import wikipedia
 import zerorpc
+import logging
 
-lang = 'en'
-wiki = Wikipedia(lang)
+logging.basicConfig()
 
-class HelloRPC(object):
-    def hello(self, name):
-        return "Hello, %s" % name
-
-
+class WikiRPC(object):
     def wikisearch(self, article):
-        try:
-            raw = wiki.article(article)
-        except:
-            raw = None
+        wiki = wikipedia.page(article)
+        parts = wiki.content.split('\n')
+        result = {}
+        imgs = wiki.images
+        for img in imgs:
+            if img.find(article.replace(" ", "_")) != -1:
+                result["main_img"] = img
+                break
 
-        if raw:
-            wiki2plain = Wiki2Plain(raw)
-            content = wiki2plain.text
-            return content
-        else:
-            return ""
+        result["main_text"] = parts[0] + "\n\n"
+        result["url"] = wiki.url
+        result["references"] = wiki.references
+        return result
 
 
-s = zerorpc.Server(HelloRPC())
+s = zerorpc.Server(WikiRPC())
 s.bind("tcp://0.0.0.0:4242")
 s.run()
