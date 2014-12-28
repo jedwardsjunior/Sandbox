@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="sandboxApp" ng-controller="HomeViewController">
   <head>
     <meta charset="UTF-8">
     <base href="/">
@@ -11,11 +11,15 @@
     <link rel="stylesheet" href="css/style.css"> <!-- custom styles -->
 
     <!-- JS -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="libs/angular/angular.min.js"></script>
+    <script src="libs/angular-route/angular-route.min.js"></script>
+
+    <!-- ANGULAR CUSTOM -->
+    <script src="js/controllers/HomeViewCtrl.js"></script>
+    <script src="js/controllers/ResultViewCtrl.js"></script>
+    <script src="js/services/SearchService.js"></script>
+    <script src="js/appRoutes.js"></script>
     <script src="js/app.js"></script>
-    <script src="public/result_view/result_view.js"></script>
   </head>
 
   <body>
