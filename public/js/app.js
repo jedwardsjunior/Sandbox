@@ -1,3 +1,3 @@
-angular.module('sandboxApp', ['ngRoute', 'appRoutes',
+angular.module('sandboxApp', ['ngRoute', 'ngResource', 'appRoutes',
                               'HomeViewCtrl', 'ResultViewCtrl',
                               'SearchService']);

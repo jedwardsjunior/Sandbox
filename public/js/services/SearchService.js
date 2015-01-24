@@ -1,35 +1,21 @@
 // public/js/services/ResultService.js
 angular.module('SearchService', [])
-  .service('searchResults', function() {
-      var query = '';
-      var result = '';
-      var image = '';
-      var url = '';
 
+  .service('searchHelper', function() {
+      var query = ''
+      var source = '';
       return {
           getQuery: function () {
-              return query;
+            return query;
           },
           setQuery: function(value) {
-              query = value;
+            query = value;
           },
-          getResult: function () {
-              return result;
+          getSource: function () {
+            return source;
           },
-          setResult: function(value) {
-              result = value;
-          },
-          getImage: function () {
-              return image;
-          },
-          setImage: function(value) {
-              image = value;
-          },
-          getUrl: function () {
-              return url;
-          },
-          setUrl: function(value) {
-              url = value;
+          setSource: function(value) {
+            source = value;
           }
       };
 

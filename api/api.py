@@ -19,6 +19,7 @@ class SearchRPC(object):
 
         result["main_text"] = parts[0] + "\n\n"
         result["url"] = wiki.url
+        result["url_text"] = "Wikipedia page for %s" % article
         result["references"] = wiki.references
         return result
 
@@ -36,6 +37,7 @@ class SearchRPC(object):
 
         result["main_text"] = text
         result["url"] = "http://www.wolframalpha.com/input/?i="+query.replace(" ", "+")
+        result["url_text"] = "Learn more about %s on Wolfram Alpha" % query
         return result
 
 

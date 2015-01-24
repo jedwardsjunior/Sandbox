@@ -11,7 +11,7 @@ angular.module('appRoutes', ['ngRoute']).config(['$routeProvider', '$locationPro
       controller: "HomeViewController"
     })
 
-    .when('/result', {
+    .when('/search/:id', {
       templateUrl: "views/result_view.html",
       controller: "ResultViewController"
     })
