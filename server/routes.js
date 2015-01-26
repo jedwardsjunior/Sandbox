@@ -26,6 +26,7 @@ module.exports = function(app) {
 
     // Python calls
     var client = new zerorpc.Client();
+    client.connect("tcp://127.0.0.1:4242");
     client.invoke("wolframsearch", query, function(error, response, more) {
         res.send(response);
     });
