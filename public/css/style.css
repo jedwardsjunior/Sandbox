@@ -1,1 +1,36 @@
-body { padding-top:30px; }
+body {
+  padding-top:30px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+
+body div {
+  text-align: center;
+}
+
+input[type="text"]{
+  padding: 10px 10px;
+  line-height: 10px;
+}
+
+input[type="submit"]{
+  padding: 10px 10px;
+  line-height: 20px;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+div a {
+  color: #000000;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+
+.footer {
+  font-size: 110%;
+  padding-top: 75px;
+}

@@ -1,4 +1,6 @@
-angular.module('ResultViewCtrl', []).controller('ResultViewController', function($scope, $http, $routeParams)
+angular.module('ResultViewCtrl', [])
+
+.controller('ResultViewController', function($scope, $http, $routeParams)
 {
   $scope.query = $routeParams.id
   $scope.source = 'wiki';
