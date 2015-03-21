@@ -16,6 +16,11 @@ angular.module('appRoutes', ['ngRoute']).config(['$routeProvider', '$locationPro
       controller: "ResultViewController"
     })
 
+    .when('/about/', {
+      templateUrl: "views/about.html",
+      controller: "HomeViewController"
+    })
+
     .otherwise({
       redirectTo: '/'
     });

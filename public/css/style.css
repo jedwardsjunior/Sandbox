@@ -24,6 +24,11 @@ input[type="submit"]{
     width: 70%;
 }
 
+div .content {
+  width: 600px;
+  font-size: 130%;
+}
+
 div a {
   color: #000000;
   font-family: 'Lato', sans-serif;
